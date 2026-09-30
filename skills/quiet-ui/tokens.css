@@ -1,0 +1,267 @@
+/*
+ * The two palettes, verbatim. Copy both blocks into the project's global stylesheet.
+ *
+ * The greys are the point: every one of them is hue-free. A tint spread across every surface is what
+ * makes an interface feel cold in the dark and tinted in the light, and removing it is the single
+ * change that does most to make a screen look considered.
+ *
+ * `--primary` and `--destructive` are the product's own accent and its alarm; swap them for the product's
+ * colours and leave every grey alone. The dark theme's accent is a lighter blue than the light theme's,
+ * because a saturated accent on a near-black surface is glare.
+ *
+ * `--hue-*` are the identity hues: a person's avatar, and the icon of a fixed status or stage. They tell the
+ * members of a set apart; their meanings are fixed (gray not started or quiet, blue moving, violet and amber
+ * waiting on someone else, orange asking for a change, green done, red stopped). Each dark value is lighter
+ * and less saturated than its light one, so it reads on the dark surface.
+ *
+ * Depth is a step of lightness, never a shadow: sidebar, then the working surface, then a card, then a
+ * popover, each one step from the last. Text stops short of white in the dark and short of black in the
+ * light, for the same reason.
+ *
+ * The names are shadcn/ui's, so a shadcn project takes this as a drop-in. In another system, map them:
+ * they are the same roles every design system has.
+ */
+
+:root {
+  /* Identity hues. */
+  --hue-gray: oklch(0.55 0.01 260);
+  --hue-blue: oklch(0.55 0.16 250);
+  --hue-violet: oklch(0.53 0.17 295);
+  --hue-pink: oklch(0.56 0.18 350);
+  --hue-red: oklch(0.55 0.19 25);
+  --hue-orange: oklch(0.6 0.16 50);
+  --hue-amber: oklch(0.62 0.14 80);
+  --hue-green: oklch(0.55 0.14 150);
+  --hue-teal: oklch(0.55 0.1 195);
+
+  --radius: 1rem;
+  /*
+   * Neutral greys, the dark theme the other way up: white where the work is, a near-white rail beside it,
+   * hairlines light enough to separate without drawing the eye, and text that stops short of black. No hue
+   * in any of them — a tint across every surface is what makes an interface feel cold.
+   */
+  --background: #ffffff;
+  --foreground: #17181a;
+  --card: #fbfbfc;
+  --card-foreground: #17181a;
+  --popover: #ffffff;
+  --popover-foreground: #17181a;
+  --primary: oklch(0.65 0.16 240);
+  --primary-foreground: #ffffff;
+  --secondary: #f1f1f2;
+  --secondary-foreground: #3c3f44;
+  --muted: #f4f4f5;
+  --muted-foreground: #6b7076;
+  --accent: #f1f1f2;
+  --accent-foreground: #17181a;
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: #ffffff;
+  --border: #e7e7e9;
+  --input: #e7e7e9;
+  --ring: oklch(0.65 0.16 240);
+  --chart-1: oklch(0.65 0.16 240);
+  --chart-2: oklch(0.75 0.18 65);
+  --chart-3: oklch(0.55 0.15 220);
+  --chart-4: oklch(0.85 0.15 85);
+  --chart-5: oklch(0.45 0.1 240);
+  --sidebar: #f7f7f8;
+  --sidebar-foreground: #3f4247;
+  --sidebar-primary: oklch(0.65 0.16 240);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eaeaec;
+  --sidebar-accent-foreground: #17181a;
+  --sidebar-border: #e7e7e9;
+  --sidebar-ring: oklch(0.65 0.16 240);
+  --shadow-color: oklch(0.2 0.05 240);
+  --shadow-opacity: 0.04;
+  --shadow-blur: 12px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 4px;
+  --tracking-normal: 0;
+  --scroll-arrow-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a7a7ad' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m18 15-6-6-6 6'/%3E%3C/svg%3E");
+  --scroll-arrow-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a7a7ad' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  --scroll-arrow-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a7a7ad' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+  --scroll-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a7a7ad' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+  --rt-highlight-fg-red: #c83030;
+  --rt-highlight-fg-orange: #db7123;
+  --rt-highlight-fg-yellow: #ac7400;
+  --rt-highlight-fg-green: #225c18;
+  --rt-highlight-fg-teal: #0e4841;
+  --rt-highlight-fg-blue: #003c67;
+  --rt-highlight-fg-purple: #7c3aed;
+  --rt-highlight-fg-grey: #7a7a7a;
+  --rt-highlight-bg-red: #fce5e6;
+  --rt-highlight-bg-orange: #ffebd5;
+  --rt-highlight-bg-yellow: #fff9b6;
+  --rt-highlight-bg-green: #f0fccb;
+  --rt-highlight-bg-teal: #c7f8f2;
+  --rt-highlight-bg-blue: #daf0ff;
+  --rt-highlight-bg-purple: #ede9ff;
+  --rt-highlight-bg-grey: #e6e6e6;
+  --rt-checkbox-border: #77757d;
+  --rt-checkbox-checked: #1e96eb;
+}
+
+.dark {
+  /* Identity hues. */
+  --hue-gray: oklch(0.72 0.01 260);
+  --hue-blue: oklch(0.74 0.13 250);
+  --hue-violet: oklch(0.74 0.13 295);
+  --hue-pink: oklch(0.75 0.14 350);
+  --hue-red: oklch(0.72 0.16 25);
+  --hue-orange: oklch(0.77 0.13 55);
+  --hue-amber: oklch(0.82 0.13 85);
+  --hue-green: oklch(0.76 0.13 150);
+  --hue-teal: oklch(0.76 0.09 195);
+
+  --scroll-arrow-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d7d85' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m18 15-6-6-6 6'/%3E%3C/svg%3E");
+  --scroll-arrow-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d7d85' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  --scroll-arrow-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d7d85' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+  --scroll-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d7d85' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+  /*
+   * A neutral dark theme, not a dimmed version of the light one. The greys carry no hue at all, because
+   * a tint across every surface is what makes a dark interface feel cold; depth is lightness instead of
+   * shadow, so the sidebar is the darkest plane, the working surface a step above it, and anything that
+   * opens on top a step above that. Text stops short of white, and colour is kept for state.
+   */
+  --background: #141516;
+  --foreground: #e9e9ea;
+  --card: #191a1c;
+  --card-foreground: #e9e9ea;
+  --popover: #1f2023;
+  --popover-foreground: #e9e9ea;
+  --primary: #4c8df6;
+  --primary-foreground: #0b0b0c;
+  --secondary: #26272b;
+  --secondary-foreground: #e9e9ea;
+  --muted: #1d1e20;
+  --muted-foreground: #8a8f98;
+  --accent: #26272b;
+  --accent-foreground: #e9e9ea;
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+  --border: #2a2b2e;
+  --input: #2a2b2e;
+  --ring: #4c8df6;
+  --chart-1: #4c8df6;
+  --chart-2: #f2c94c;
+  --chart-3: #6fcf97;
+  --chart-4: #e5484d;
+  --chart-5: #bb86fc;
+  --sidebar: #0d0d0e;
+  --sidebar-foreground: #b4b6ba;
+  --sidebar-primary: #4c8df6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #222325;
+  --sidebar-accent-foreground: #f2f2f3;
+  --sidebar-border: #232426;
+  --sidebar-ring: #4c8df6;
+  --shadow-color: oklch(0 0 0);
+  --shadow-opacity: 0.2;
+  --shadow-blur: 16px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 8px;
+  --rt-highlight-fg-red: #fc7979;
+  --rt-highlight-fg-orange: #ffae63;
+  --rt-highlight-fg-yellow: #facc15;
+  --rt-highlight-fg-green: #9bda91;
+  --rt-highlight-fg-teal: #448e86;
+  --rt-highlight-fg-blue: #2f94d5;
+  --rt-highlight-fg-purple: #9681ef;
+  --rt-highlight-fg-grey: #565656;
+  --rt-highlight-bg-red: #460606;
+  --rt-highlight-bg-orange: #843b06;
+  --rt-highlight-bg-yellow: #321a04;
+  --rt-highlight-bg-green: #192e06;
+  --rt-highlight-bg-teal: #0e4841;
+  --rt-highlight-bg-blue: #002742;
+  --rt-highlight-bg-purple: #2e1065;
+  --rt-highlight-bg-grey: #414141;
+  --rt-checkbox-border: rgb(168, 168, 160);
+  --rt-checkbox-checked: #1e96eb;
+}
+
+/* Scrollbars. See patterns.md §8: this is not `:hover`, and it cannot fade, for reasons worth reading. */
+@layer base {
+  /*
+   * Thin, trackless scrollbars with a chevron at each end, drawn only while the pointer is over the thing
+   * that scrolls. A bar standing in every list at rest is one more mark carrying no information, and the
+   * bar keeps its width whether or not it is drawn, so nothing reflows when it appears.
+   *
+   * `[data-scrollbar-hover]` is set by `ScrollbarHover` rather than being `:hover` here, because Chromium
+   * resolves these pseudo-elements once and never again for a change of hover state; an attribute forces
+   * the recalculation that picks them up.
+   *
+   * It appears rather than fades, and that is as good as it gets while the bar is styled: Chromium runs
+   * no transition on a scrollbar pseudo-element. Only the standard `scrollbar-color` animates, and
+   * setting it hands the whole bar back to the browser — a wide native one with its own arrows, which is
+   * not this. Do not trade the design for the fade again.
+   *
+   * Firefox has no `::-webkit-` scrollbars; it takes the standard properties instead, and does fade.
+   */
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: transparent transparent;
+      transition: scrollbar-color 150ms ease;
+    }
+    *[data-scrollbar-hover] {
+      scrollbar-color: color-mix(in oklch, var(--muted-foreground) 45%, transparent) transparent;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    background: transparent padding-box;
+  }
+  [data-scrollbar-hover]::-webkit-scrollbar-thumb {
+    background: color-mix(in oklch, var(--muted-foreground) 35%, transparent) padding-box;
+  }
+  [data-scrollbar-hover]::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklch, var(--muted-foreground) 60%, transparent) padding-box;
+  }
+  /*
+   * A small chevron at each end. Chrome's scrollbar parts ignore `mask-*`, so the arrow is a background
+   * image and carries its own colour per theme. Chrome offers a second button at each end; those two stay
+   * hidden, so there is one arrow at the top and one at the bottom and nothing doubled in between.
+   */
+  ::-webkit-scrollbar-button {
+    display: block;
+    height: 8px;
+    width: 8px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7px 7px;
+    opacity: 0;
+  }
+  [data-scrollbar-hover]::-webkit-scrollbar-button {
+    opacity: 1;
+  }
+  ::-webkit-scrollbar-button:start:increment,
+  ::-webkit-scrollbar-button:end:decrement {
+    display: none;
+  }
+  ::-webkit-scrollbar-button:vertical:decrement {
+    background-image: var(--scroll-arrow-up);
+  }
+  ::-webkit-scrollbar-button:vertical:increment {
+    background-image: var(--scroll-arrow-down);
+  }
+  ::-webkit-scrollbar-button:horizontal:decrement {
+    background-image: var(--scroll-arrow-left);
+  }
+  ::-webkit-scrollbar-button:horizontal:increment {
+    background-image: var(--scroll-arrow-right);
+  }
+}
